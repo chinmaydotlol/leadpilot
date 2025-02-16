@@ -96,7 +96,7 @@ export function Hero() {
               <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-[#BDD9BF]/0 via-[#BDD9BF]/90 to-[#BDD9BF]/0 transition-opacity duration-500 group-hover:opacity-40"></span>
             </button>
             <Link
-              href="https://discord.gg/VYSW8UecG7"
+              href="https://discord.gg/yh6ctPybAr"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 rounded-full relative bg-[#BDD9BF] text-black text-sm font-semibold hover:shadow-2xl hover:shadow-[#BDD9BF]/20 transition duration-200 text-center"
