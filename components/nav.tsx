@@ -29,18 +29,18 @@ export function Nav() {
         scrolled && "bg-black/20 backdrop-blur-md border-b border-white/[0.1]",
       )}
     >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center h-16 gap-x-8">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex items-center h-16 gap-x-4">
           <button className="text-2xl font-bold text-[#BDD9BF]"
                   onClick={() => scrollTo("home")}>
             LeadPilot
           </button>
-          <nav className="hidden md:flex gap-x-8">
+          <nav className="hidden md:flex">
             <button
               onClick={() => scrollTo("subscribe")}
               className="text-sm text-zinc-300 hover:text-[#BDD9BF] transition-colors"
             >
-                            Join Beta
+              Join Beta
             </button>
           </nav>
         </div>

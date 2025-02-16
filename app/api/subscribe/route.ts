@@ -11,9 +11,9 @@ const options = {}
 export async function POST(req: Request) {
   try {
     const body = await req.json()
-    const { name, email, role, otherRole } = body
+    const { name, email } = body
 
-    if (!name || !email || !role) {
+    if (!name || !email) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 })
     }
 
@@ -32,7 +32,6 @@ export async function POST(req: Request) {
       const result = await collection.insertOne({
         name,
         email,
-        role: role === "Other" ? otherRole : role,
         subscribedAt: new Date(),
       })
 

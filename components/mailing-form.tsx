@@ -5,14 +5,10 @@ import { motion, AnimatePresence } from "framer-motion"
 import { ChevronDown, Check, AlertCircle } from "lucide-react"
 import type React from "react"
 
-const roles = ["Freelancer", "Business/Startup Founder", "Content Creator", "Sales Professional", "Marketer", "Other"]
-
 export function MailingForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    role: "",
-    otherRole: "",
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
@@ -39,7 +35,7 @@ export function MailingForm() {
       }
 
       setIsSubmitted(true)
-      setFormData({ name: "", email: "", role: "", otherRole: "" })
+      setFormData({ name: "", email: "" })
 
       // Reset form fields
       const form = e.target as HTMLFormElement
@@ -99,43 +95,6 @@ export function MailingForm() {
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               />
             </div>
-            <div>
-              <label htmlFor="role" className="block text-sm font-medium text-zinc-300 mb-1">
-                Role
-              </label>
-              <select
-                id="role"
-                name="role"
-                required
-                value={formData.role}
-                onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                className="w-full px-3 py-2 bg-black/30 border border-white/10 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-[#BDD9BF] focus:border-transparent"
-              >
-                <option value="">Select your role</option>
-                {roles.map((role) => (
-                  <option key={role} value={role}>
-                    {role}
-                  </option>
-                ))}
-              </select>
-            </div>
-            {formData.role === "Other" && (
-              <div>
-                <label htmlFor="otherRole" className="block text-sm font-medium text-zinc-300 mb-1">
-                  Specify Your Role
-                </label>
-                <input
-                  type="text"
-                  id="otherRole"
-                  name="otherRole"
-                  required
-                  value={formData.otherRole}
-                  className="w-full px-3 py-2 bg-black/30 border border-white/10 rounded-md text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-[#BDD9BF] focus:border-transparent"
-                  placeholder="Enter your role"
-                  onChange={(e) => setFormData({ ...formData, otherRole: e.target.value })}
-                />
-              </div>
-            )}
             <button
               type="submit"
               disabled={isLoading}
