@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: #bdd9bf;
+  border-radius: 50%;
+  animation: twinkle var(--duration) infinite;
+  opacity: 0;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+body {
+  background-color: black;
+  color: white;
+}
